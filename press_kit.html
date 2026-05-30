@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전유진 가수 프로필 · 자료 모음 — 텐텐 사랑방</title>
+<meta name="description" content="가수 전유진(Jeon Yujin) 프로필·디스코그래피·주요 출연·평판 지표 — 텐텐 사랑방의 자료 모음 페이지">
+<style>
+  :root {
+    --bg-1: #FFF4EA;
+    --bg-2: #FFE5D0;
+    --accent: #FF9F6B;
+    --accent-deep: #E07A48;
+    --text: #2C2622;
+    --text-soft: #6B5B52;
+    --card: #FFFFFF;
+    --card-shadow: 0 4px 14px rgba(224, 122, 72, 0.10);
+    --radius: 12px;
+    --border: #FFD8BD;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
+    color: var(--text);
+    background: linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrapper {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+  .draft-banner {
+    background: #FFF7C2;
+    border: 1px dashed #E0B240;
+    color: #6E4F00;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  header.hero {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    padding: 28px 28px 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .photo-placeholder {
+    width: 140px; height: 140px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #FFD4B3, #FFB78A);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px; font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+    box-shadow: 0 6px 18px rgba(224, 122, 72, 0.22);
+  }
+  .hero-text h1 {
+    margin: 0 0 4px;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+  .hero-text .latin { color: var(--text-soft); font-size: 14px; }
+  .tags {
+    margin-top: 10px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .tag {
+    padding: 4px 10px;
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    color: var(--accent-deep);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  section {
+    margin-top: 24px;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    padding: 24px 28px;
+  }
+  section h2 {
+    margin: 0 0 14px;
+    font-size: 18px;
+    color: var(--accent-deep);
+    letter-spacing: -0.3px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 6px;
+    border-bottom: 1px solid #F3E6D7;
+  }
+  th { width: 28%; color: var(--text-soft); font-weight: 600; font-size: 13px; }
+  ul { margin: 0; padding-left: 18px; line-height: 1.7; }
+  ul.discography li {
+    list-style: none;
+    padding: 6px 0;
+    border-bottom: 1px solid #F3E6D7;
+    display: flex;
+    gap: 12px;
+  }
+  ul.discography {
+    padding-left: 0;
+  }
+  ul.discography .date {
+    color: var(--accent-deep);
+    font-weight: 600;
+    font-size: 13px;
+    min-width: 84px;
+  }
+  ul.discography .meta {
+    color: var(--text-soft);
+    font-size: 12px;
+    margin-left: auto;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .stat {
+    background: var(--bg-1);
+    padding: 14px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .stat .v {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent-deep);
+  }
+  .stat .l {
+    font-size: 12px;
+    color: var(--text-soft);
+    margin-top: 4px;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .video-grid a {
+    display: block;
+    padding: 14px;
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .video-grid a:hover { background: #FFFFFF; }
+  .video-grid .play { color: var(--accent-deep); font-weight: 600; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .contact-grid a {
+    padding: 12px;
+    background: var(--bg-1);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+  }
+  footer {
+    margin-top: 36px;
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .source-note {
+    color: var(--text-soft);
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  .back {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--accent-deep);
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .biz-row {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-size: 15px;
+  }
+  .biz-email {
+    color: var(--accent-deep);
+    font-weight: 700;
+    font-family: 'Consolas', 'Menlo', monospace;
+    background: var(--bg-1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+    transition: background 0.15s ease;
+  }
+  .biz-email:hover { background: #FFFFFF; }
+  .biz-help {
+    margin-top: 18px;
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+  }
+  .biz-help-title {
+    font-weight: 700;
+    color: var(--accent-deep);
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .biz-help-steps {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .biz-help-steps li { margin-bottom: 4px; }
+  .biz-help-steps ul {
+    margin: 4px 0;
+    padding-left: 16px;
+    color: var(--text-soft);
+    font-size: 12.5px;
+  }
+  .biz-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+  .biz-btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    color: var(--accent-deep);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .biz-btn:hover { background: #FFFFFF; }
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translateX(-50%) translateY(20px);
+    background: #2C2622;
+    color: #FFF;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    opacity: 0;
+    transition: all 0.25s ease;
+    pointer-events: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    z-index: 100;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  @media (max-width: 600px) {
+    header.hero { flex-direction: column; align-items: flex-start; }
+    .photo-placeholder { width: 100px; height: 100px; font-size: 36px; }
+    .stats-grid, .video-grid, .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <a class="back" href="index.html">← 텐텐 사랑방으로 돌아가기</a>
+
+  <header class="hero">
+    <div class="photo-placeholder" aria-hidden="true">YJ</div>
+    <div class="hero-text">
+      <h1>전유진 <span style="font-size:18px; color:var(--text-soft);">Jeon Yujin</span></h1>
+      <div class="latin">현역가왕 1대 우승자 · 정통 트로트 · 동덕여대 실용음악과</div>
+      <div class="tags">
+        <span class="tag">10대 톱10 평판 진입</span>
+        <span class="tag">전유진TV 누적 1억 뷰+</span>
+        <span class="tag">정통 트로트 + 발라드 확장</span>
+        <span class="tag">한일가왕전 라이징스타</span>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>한 줄 소개</h2>
+    <p style="font-size:15px; margin:0; line-height:1.6;">
+      <strong>"어머니와 딸을 한 광고로 잡을 수 있는 유일한 차세대 트로트 가수."</strong><br>
+      2006년생, 정통 트로트 보컬로 시작해 발라드까지 확장하며 전 세대 통합형 아티스트로 성장 중.
+    </p>
+  </section>
+
+  <section>
+    <h2>프로필</h2>
+    <table>
+      <tr><th>본명·예명</th><td>전유진 (Jeon Yujin)</td></tr>
+      <tr><th>생년월일</th><td>2006-10-10</td></tr>
+      <tr><th>출생지</th><td>경상북도 포항</td></tr>
+      <tr><th>학력</th><td>포항 동성고등학교 졸업 (2024) · 동덕여자대학교 실용음악과 재학 (2025~)</td></tr>
+      <tr><th>소속사</th><td>J-Label</td></tr>
+      <tr><th>데뷔</th><td>2019 포항해변전국가요제 대상</td></tr>
+      <tr><th>장르</th><td>정통 트로트 · 발라드 · OST</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>주요 평판 지표</h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="v">8위</div>
+        <div class="l">한국기업평판연구소<br>트로트 가수 (2026-04, 전체)</div>
+      </div>
+      <div class="stat">
+        <div class="v">여자 3위</div>
+        <div class="l">같은 표 여자 트로트 카테고리<br>(10대 가수 중 톱10 유일)</div>
+      </div>
+      <div class="stat">
+        <div class="v">↑상승</div>
+        <div class="l">2023~2025 평균 19위 →<br>최근 13위 → 4월 8위</div>
+      </div>
+    </div>
+    <p class="source-note">출처: 한국기업평판연구소 (brikorea.com) 월간 트로트 가수 브랜드평판 빅데이터 분석</p>
+  </section>
+
+  <section>
+    <h2>디스코그래피 (주요)</h2>
+    <ul class="discography">
+      <li><span class="date">2026-04</span><span>나의 사랑 나의 운명</span><span class="meta">싱글</span></li>
+      <li><span class="date">2026-03</span><span>가요 가요</span><span class="meta">싱글</span></li>
+      <li><span class="date">2026-01</span><span>하루만 나의 꿈속에 다녀가세요</span><span class="meta">싱글</span></li>
+      <li><span class="date">2025-10</span><span>어린잠</span><span class="meta">디지털 싱글</span></li>
+      <li><span class="date">2024-12</span><span>Only You</span><span class="meta">1st 미니앨범 · 현역가왕 우승 기념</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>주요 출연·수상</h2>
+    <table>
+      <tr><th>2019</th><td>포항해변전국가요제 <strong>대상</strong></td></tr>
+      <tr><th>2019</th><td>KBS2 노래가좋아 「트로트가 좋아」 1회 우승 / 최종 준우승</td></tr>
+      <tr><th>2020</th><td>MBC 편애중계 신동대전 우승 / 왕중왕전 준우승</td></tr>
+      <tr><th>2021</th><td>TV조선 미스트롯2 대국민 응원투표 5주 연속 1위</td></tr>
+      <tr><th>2024</th><td>MBN 현역가왕 시즌1 <strong>초대 우승 (1대 가왕)</strong> · 상금 1억 원</td></tr>
+      <tr><th>2024</th><td>한일가왕전 라이징스타상</td></tr>
+      <tr><th>2025</th><td>KBS 불후의 명곡 <strong>최종 우승</strong> (정일영 '기도' 발라드)</td></tr>
+      <tr><th>2025</th><td>한일톱텐쇼 '가왕 중의 가왕' 등극</td></tr>
+      <tr><th>2025</th><td>1st Fan Concert 'TWENTY' 개최</td></tr>
+      <tr><th>2026</th><td>K-트롯 그랜드 어워즈 MC</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>대표 무대 (영상 링크)</h2>
+    <div class="video-grid">
+      <a href="https://www.youtube.com/@1010_y_jin" target="_blank" rel="noopener">
+        <div class="play">▶ 공식 채널 전유진TV</div>
+        <div class="source-note">누적 1억 뷰+ · 무대·MV·브이로그</div>
+      </a>
+      <a href="https://www.youtube.com/results?search_query=%EC%A0%84%EC%9C%A0%EC%A7%84+%EC%84%9C%EC%9A%B8+%EA%B0%80+%EC%82%B4%EC%9E%90+%EC%A7%81%EC%BA%A0" target="_blank" rel="noopener">
+        <div class="play">▶ 미스트롯2 "서울 가 살자" 직캠</div>
+        <div class="source-note">870만 뷰+ 역주행 무대</div>
+      </a>
+      <a href="https://www.youtube.com/results?search_query=%EC%A0%84%EC%9C%A0%EC%A7%84+%ED%9B%A8%ED%9B%A8%ED%9B%A8" target="_blank" rel="noopener">
+        <div class="play">▶ '훨훨훨' 편애중계 무대</div>
+        <div class="source-note">1,000만 뷰+ 대표 무대</div>
+      </a>
+      <a href="https://www.youtube.com/results?search_query=%EC%A0%84%EC%9C%A0%EC%A7%84+%EA%B8%B0%EB%8F%84+%EB%B6%88%ED%9B%84%EC%9D%98+%EB%AA%85%EA%B3%A1" target="_blank" rel="noopener">
+        <div class="play">▶ 불후의 명곡 '기도' 발라드</div>
+        <div class="source-note">2025-01 우승 무대 — 장르 확장 검증</div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>공식 채널</h2>
+    <div class="contact-grid">
+      <a href="https://www.youtube.com/@1010_y_jin" target="_blank" rel="noopener">▶ YouTube · @1010_y_jin</a>
+      <a href="https://www.instagram.com/1010_y_jin/" target="_blank" rel="noopener">📷 Instagram · @1010_y_jin</a>
+      <a href="https://cafe.naver.com/yujinguard" target="_blank" rel="noopener">🤍 공식 팬카페 온리유</a>
+      <a href="https://www.melon.com/artist/timeline.htm?artistId=2859549" target="_blank" rel="noopener">🎵 Melon 아티스트 페이지</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>응원하기</h2>
+    <p style="margin:0; font-size:14px; line-height:1.7;">
+      가장 큰 응원은 <strong>공식 채널에서 직접 무대·음원을 즐기는 것</strong>입니다.<br>
+      위 채널 어디든 한 번 들러주시면 가수에게 그대로 힘이 돼요. 🤍<br>
+      방송·콘서트·신곡 정보는 공식 팬카페 <a href="https://cafe.naver.com/yujinguard" target="_blank" rel="noopener" style="color:var(--accent-deep); font-weight:600;">온리유</a>에서 가장 빠르게 확인하실 수 있습니다.
+    </p>
+  </section>
+
+  <footer>
+    텐텐이 함께 만들어 가는 비공식 응원 페이지입니다.<br>
+    수치·이력은 공개된 자료를 참고했으며, 발표 시점에 따라 갱신됩니다.<br>
+    평판 지표 출처: 한국기업평판연구소 (brikorea.com)<br>
+    가수에 관한 모든 권리는 본인과 소속사에 있습니다.
+  </footer>
+
+</div>
+</body>
+</html>
